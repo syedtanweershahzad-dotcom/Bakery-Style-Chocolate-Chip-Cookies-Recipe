@@ -1,0 +1,390 @@
+/* Global Styles & Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    background-color: #fcfcfc;
+    color: #333333;
+    line-height: 1.6;
+    padding: 40px 20px;
+}
+
+.recipe-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fdf5f0; /* Creamy peach background color from image */
+    padding: 40px;
+    border-radius: 16px;
+}
+
+/* Header Layout */
+.recipe-header {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 25px;
+}
+
+.header-left {
+    flex-shrink: 0;
+}
+
+.cookie-img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.header-right {
+    flex-grow: 1;
+}
+
+.sub-heading {
+    font-family: 'Arial', sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    color: #d14949;
+    letter-spacing: 1px;
+}
+
+h1 {
+    font-size: 32px;
+    font-weight: normal;
+    color: #1e2d42;
+    margin: 5px 0 10px 0;
+}
+
+/* FIX 2: Merged duplicate .author styles here */
+.author {
+    display: flex;
+    align-items: center; /* Image aur text ko ek line mein barabar karne ke liye */
+    gap: 8px;            /* Image aur text ke darmiyan thoda gap rakhne ke liye */
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.author-profile-img {
+    width: 28px;          /* Choti profile picture ka size */
+    height: 28px;
+    border-radius: 50%;   /* Isse image perfectly round ho jayegi */
+    object-fit: cover;    /* Isse image stretch ya kharab nahi hogi */
+    border: 1px solid #e8dcd5; /* Optional: halka sa border design ke liye */
+}
+
+.author-name {
+    color: #d14949;
+    text-decoration: underline;
+}
+
+.stars {
+    color: #333;
+    margin-left: 5px;
+}
+
+.yields {
+    font-family: 'Arial', sans-serif;
+    font-size: 12px;
+    color: #d14949;
+    margin-bottom: 15px;
+}
+
+/* Time Block Grid */
+.time-stats {
+    display: flex;
+    border-top: 1px solid #e8dcd5;
+    border-bottom: 1px solid #e8dcd5;
+    padding: 12px 0;
+    margin-bottom: 20px;
+    max-width: 450px;
+}
+
+.time-block {
+    flex: 1;
+    text-align: center;
+    border-right: 1px solid #e8dcd5;
+}
+
+.time-block:last-child {
+    border-right: none;
+}
+
+.time-label {
+    display: block;
+    font-family: 'Arial', sans-serif;
+    font-size: 11px;
+    color: #777;
+    text-transform: uppercase;
+}
+
+.time-value {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 4px;
+}
+
+/* Buttons */
+.action-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    font-family: 'Arial', sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.btn-dark {
+    background-color: #1d2120;
+    color: #ffffff;
+}
+
+/* FIX 1: Corrected the invalid hex code #333bb to #333333 */
+.btn-dark:hover {
+    background-color: #333333;
+}
+
+/* Recipe Description */
+.recipe-description {
+    font-size: 15px;
+    color: #444;
+    margin-bottom: 30px;
+    font-style: normal;
+}
+
+/* Email Container Box */
+.email-box {
+    border: 1px solid #e88686;
+    border-radius: 8px;
+    padding: 20px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffffff;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.email-icon-badge {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #e55353;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+
+.email-content h2 {
+    font-size: 24px;
+    font-weight: normal;
+    color: #222;
+}
+
+.email-content p {
+    font-size: 14px;
+    color: #666;
+}
+
+.email-form {
+    display: flex;
+}
+
+.email-form input {
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-right: none;
+    width: 220px;
+    font-size: 12px;
+}
+
+.email-form button {
+    background-color: #e55353;
+    color: white;
+    border: none;
+    padding: 0 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Cook Mode Toggle Switch */
+.cook-mode-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.cook-mode-text {
+    font-family: 'Arial', sans-serif;
+    font-size: 13px;
+    color: #333;
+    margin-left: 12px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 22px;
+}
+
+.switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #e55353;
+}
+
+input:checked + .slider:before {
+    transform: translateX(22px);
+}
+
+.slider.round {
+    border-radius: 22px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+/* Sections Global Styling */
+.section-divider {
+    border: 0;
+    height: 1px;
+    background-color: #e8dcd5;
+    margin: 30px 0;
+}
+
+h2 {
+    font-size: 32px;
+    font-weight: normal;
+    color: #1e2d42;
+    margin-bottom: 20px;
+}
+
+/* Highlight Pills */
+.highlight-pill {
+    border: 1px solid #e55353;
+    color: #e55353;
+    padding: 1px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    display: inline-block;
+}
+
+/* Ingredients Checklist Layout */
+.ingredients-list {
+    list-style: none;
+}
+
+.ingredients-list li {
+    font-size: 16px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #333;
+}
+
+.ingredients-list input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: #1e2d42;
+}
+
+/* Instructions List Layout */
+.instructions-list {
+    list-style: none;
+}
+
+.instructions-list li {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+    align-items: flex-start;
+}
+
+.step-number {
+    background-color: #e55353;
+    color: white;
+    min-width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Arial', sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.instructions-list p {
+    font-size: 15px;
+    color: #333;
+    text-align: justify;
+}
+
+/* Responsive adjustment */
+@media (max-width: 600px) {
+    .recipe-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .time-stats {
+        margin: 15px auto;
+    }
+    .action-buttons {
+        justify-content: center;
+    }
+    .email-box {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+}
