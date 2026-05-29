@@ -388,3 +388,44 @@ h2 {
         text-align: center;
     }
 }
+
+/* Poore container ko ek horizontal row me lane ke liye */
+.time-stats {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 15px;
+    max-width: 600px; /* Card ke mutabik set karein */
+    margin: 0 auto;
+}
+
+/* Har ek time block ki styling aur spacing */
+.time-block {
+    flex: 1; /* Teeno blocks barabar jagah lenge */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 10px; /* Left aur right se thoda gap */
+}
+
+/* 🟥 Vertical Red Line lagane ka magic rule 🟥 */
+/* Yeh rule har block ke right side par line lagayega, siwaye aakhri (Total Time) block ke */
+.time-block:not(:last-child) {
+    border-right: 1.5px solid red; 
+}
+
+/* Labels ki styling (Prep Time, Cook Time, etc.) */
+.time-label {
+    font-size: 12px;
+    color: #333;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+/* Values ki styling (15 mins, 30 mins, etc.) */
+.time-value {
+    font-size: 12px;
+    color: #111;
+    font-weight: 600;
+}
